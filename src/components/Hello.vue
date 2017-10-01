@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ title }}</h1>
+    <h1>{{ $T('title') }}</h1>
     <h2>{{ caption }}</h2>
     <ul>
       <li v-for="(t, i) in todos" :key="i">{{ t }}</li>
@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import T from '../locales';
 import services from '../services';
 
 export default {
@@ -18,13 +17,12 @@ export default {
   data() {
     return {
       todos: [],
-      title: T('title'),
     };
   },
 
   computed: {
     caption() {
-      return T('caption', this.todos.length);
+      return this.$T('caption', this.todos.length);
     },
   },
 
