@@ -1,7 +1,5 @@
-import cn from './cn';
-import en from './en';
-
-const properties = { cn, en }[process.env.LOCALE];
+// eslint-disable-next-line
+const properties = require(`./${process.env.LOCALE}`).default;
 
 export default function T(key, ...args) {
   return properties[key].replace(
