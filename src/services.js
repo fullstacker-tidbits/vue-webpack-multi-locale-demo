@@ -1,7 +1,7 @@
 export default {
   async todoList() {
     return [
-      'Vue locale a blog',
+      'Vue locale blog',
       '50 push-ups',
       'Perspectives on Marketplace Ministry',
     ];

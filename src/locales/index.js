@@ -1,6 +1,7 @@
+import cn from './cn';
 import en from './en';
 
-const properties = en;
+const properties = { cn, en }[process.env.LOCALE];
 
 export default function T(key, ...args) {
   return properties[key].replace(
