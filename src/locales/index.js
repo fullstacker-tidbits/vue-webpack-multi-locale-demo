@@ -1,9 +1,9 @@
 // eslint-disable-next-line
-const properties = require(`./${process.env.LOCALE}`).default;
+const properties = require(`./${process.env.LOCALE}`);
 
-export default function T(key, ...args) {
+module.exports = function T(key, ...args) {
   return properties[key].replace(
     /{(\d)}/g,
     (match, num) => (typeof args[num] !== 'undefined' ? args[num] : match),
   );
-}
+};
